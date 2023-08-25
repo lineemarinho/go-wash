@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-title>Adicionar novo endereço</ion-title>
+  <ion-list>
+    <ion-item>
+      <ion-input
+        label="Cep"
+        labelPlacement="stacked"
+        type="text"
+        placeholder="CEP"
+        (ionChange)="searchCep(detailsAddresses.cep)"
+        [(ngModel)]="detailsAddresses.cep"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        label="Endereço"
+        labelPlacement="stacked"
+        type="text"
+        placeholder="Endereço"
+        [(ngModel)]="detailsAddresses.address"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        label="Número"
+        labelPlacement="stacked"
+        type="text"
+        placeholder="Número"
+        [(ngModel)]="detailsAddresses.number"
+      >
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="Complemento"
+        labelPlacement="stacked"
+        type="text"
+        [(ngModel)]="detailsAddresses.complement"
+        placeholder="Complemento"
+      >
+      </ion-input>
+    </ion-item>
+    <app-button (click)="submitForm()" [action]="action"></app-button>
+  </ion-list>
+</ion-content>

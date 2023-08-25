@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-title>Meus veiculos</ion-title><br />
+  <app-vehicles [vehicles]="vehicles" [edit]="edit"></app-vehicles>
+  <app-button
+    class="action"
+    (click)="addVehicles()"
+    [action]="action"
+  ></app-button>
+</ion-content>

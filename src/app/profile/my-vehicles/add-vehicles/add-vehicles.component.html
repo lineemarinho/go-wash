@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-title>Adicione seu veiculo</ion-title>
+  <ion-list>
+    <ion-item>
+      <ion-input
+        label="Informe o Modelo"
+        labelPlacement="stacked"
+        type="text"
+        [(ngModel)]="vehicles.model"
+        placeholder="Modelo"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        label="Informe o ano"
+        labelPlacement="stacked"
+        type="text"
+        [(ngModel)]="vehicles.year"
+        placeholder="Ano do veiculo"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        label="Informe a marca "
+        labelPlacement="stacked"
+        type="text"
+        [(ngModel)]="vehicles.brand"
+        placeholder="Marca do veiculo"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        label="Cor do veiculo"
+        labelPlacement="stacked"
+        type="text"
+        [(ngModel)]="vehicles.color"
+        placeholder="Cor do veiculo"
+      >
+      </ion-input>
+    </ion-item>
+    <div class="colors">Selecione o tipo do veiculo:</div>
+    <div class="list">
+      <div
+        class="card"
+        [ngClass]="{ selected: typeCar === 'suv' }"
+        (click)="selectVehicleType('suv')"
+      >
+        <img src="assets/icon/suv.png" alt="Logo" class="logo" />SUV
+      </div>
+      <div
+        class="card"
+        [ngClass]="{ selected: typeCar === 'sedan' }"
+        (click)="selectVehicleType('sedan')"
+      >
+        <img src="assets/icon/sedan.png" alt="Logo" class="logo" />Sedan
+      </div>
+      <div
+        class="card"
+        [ngClass]="{ selected: typeCar === 'hatch' }"
+        (click)="selectVehicleType('hatch')"
+      >
+        <img src="assets/icon/hatch.png" alt="Logo" class="logo" />Hatch
+      </div>
+    </div>
+    <app-button (click)="edit()" action="Editar"></app-button>
+    <app-button (click)="submitForm()" [action]="action"></app-button>
+  </ion-list>
+</ion-content>

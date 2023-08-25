@@ -1,0 +1,22 @@
+<ion-content>
+  <div class="title">
+    Agendamentos
+    <ion-searchbar
+      class="custom"
+      *ngIf="user"
+      placeholder="Psiu! Procure por aqui"
+    ></ion-searchbar>
+  </div>
+  <div class="message" *ngIf="!user">
+    Faça o login para <br />
+    visualizar os agendamentos.
+  </div>
+  <div *ngIf="user">
+    <div class="filter" (click)="filter()">
+      <ion-icon name="filter-outline"></ion-icon> Filtrar
+    </div>
+    <div class="list" (click)="open()">
+      <app-scheduling></app-scheduling>
+    </div>
+  </div>
+</ion-content>

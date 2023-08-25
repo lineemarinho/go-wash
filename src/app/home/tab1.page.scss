@@ -1,0 +1,22 @@
+.container-list {
+  width: 100%;
+  float: left;
+}
+
+h1 {
+  color: #1E1E1E;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 148.4%;
+  margin: 10px 0 0 0;
+}
+
+
+ion-content {
+  --padding-start: 15px;
+  --padding-top: 15px;
+  --padding-end: 15px;
+  --padding-bottom: 15px;
+}

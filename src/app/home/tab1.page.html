@@ -1,0 +1,18 @@
+<app-header></app-header
+><ion-content>
+  <div *ngIf="user" class="container-list">
+    <h1>Meus veiculos</h1>
+    <br />
+    <app-vehicles [vehicles]="vehicles"></app-vehicles>
+  </div>
+
+  <div class="container-list">
+    <!-- <app-slider></app-slider> -->
+  </div>
+
+  <div class="container-list">
+    <h1>Mais sobre GoWash</h1>
+    <br />
+    <app-news></app-news>
+  </div>
+</ion-content>

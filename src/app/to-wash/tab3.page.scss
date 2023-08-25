@@ -1,0 +1,41 @@
+ion-content {
+  --padding-start: 15px;
+  --padding-top: 15px;
+  --padding-end: 15px;
+  --padding-bottom: 90px;
+}
+
+
+.list {
+  width: 100%;
+  float: left;
+  margin: 0 0 0 0;
+}
+
+
+ion-toolbar {
+  --background: white;
+  --border-color: white;
+
+}
+
+
+
+input {
+  border-radius: 10px;
+  --background: #EFEFEF;
+}
+
+.title {
+  padding: 10px 0;
+}
+
+ion-title {
+  text-align: left;
+}
+
+
+
+// ::ng-deep.searchbar-input-container.sc-ion-searchbar-ios {
+//   height: 50px !important;
+// }

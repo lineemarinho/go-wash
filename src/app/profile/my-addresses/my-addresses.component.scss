@@ -1,0 +1,58 @@
+.terms {
+  width: 100%;
+  float: left;
+  margin: 20px 0 0 0;
+  font-size: 12px;
+}
+
+ion-title {
+  color: #1E1E1E;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  display: contents;
+  float: left;
+  width: 100%;
+  text-align: left;
+}
+
+ion-toolbar {
+  --background: white;
+  --border-color: white;
+}
+
+
+
+
+ion-content {
+  --padding-start: 15px;
+  --padding-top: 15px;
+  --padding-end: 15px;
+  --padding-bottom: 15px;
+}
+
+ion-back-button {
+  width: 20px;
+  height: 39px;
+  font-size: 10px;
+  min-width: 39px;
+}
+
+ion-header {
+  padding: 0;
+  box-shadow: none;
+}
+
+div {
+  font-weight: normal;
+  font-family: Montserrat;
+}
+
+ion-content {
+  --background: white;
+}
+
+ion-header {
+  --background: white;
+}

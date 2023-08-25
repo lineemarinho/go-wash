@@ -1,0 +1,43 @@
+.address {
+  width: 100%;
+  float: left;
+}
+
+.date {
+  li {
+    width: 22%;
+    padding: 15px 2%;
+    margin: 0 10px 10px 0;
+    font-size: 12px;
+
+    b {
+      font-weight: bold;
+      font-weight: 20px;
+    }
+  }
+}
+
+ion-content {
+  --padding-start: 15px;
+  --padding-top: 15px;
+  --padding-end: 15px;
+  --padding-bottom: 90px;
+}
+
+ion-toolbar {
+  --background: white;
+  --border-color: white;
+}
+
+
+ion-back-button {
+  width: 20px;
+  height: 39px;
+  font-size: 10px;
+  min-width: 39px;
+}
+
+ion-header {
+  padding: 0;
+  box-shadow: none;
+}

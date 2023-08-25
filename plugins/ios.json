@@ -1,0 +1,27 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "goWash"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "goWash"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "goWash"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "goWash"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "goWash"
+    }
+  },
+  "dependent_plugins": {}
+}

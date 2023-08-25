@@ -1,0 +1,8 @@
+{
+  "name": "go-wash",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

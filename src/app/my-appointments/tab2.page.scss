@@ -1,0 +1,33 @@
+.list {
+  width: 100%;
+  float: left;
+  margin: 0 0 0 0;
+}
+
+
+ion-toolbar {
+  --background: white;
+  --border-color: white;
+
+}
+
+
+
+input {
+  border-radius: 10px;
+  --background: #EFEFEF;
+}
+
+.title {
+  padding: 30px 15px;
+}
+
+ion-title {
+  text-align: left;
+}
+
+
+
+// ::ng-deep.searchbar-input-container.sc-ion-searchbar-ios {
+//   height: 50px !important;
+// }

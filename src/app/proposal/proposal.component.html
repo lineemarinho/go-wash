@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-title
+    >Escolha um dos lavadores que <br />aceitou seu pedido de lavagem.
+  </ion-title>
+
+  <div class="card">
+    <b
+      >Cleber Almeida
+      <div class="value">R$ 90,00</div>
+    </b>
+    <div class="obs">Obs: Cleber Almeida da Silva observações da proposta</div>
+    <div class="nota" (click)="assessment()">
+      <span class="material-symbols-outlined"> star </span> Nota 9.5 - 65
+      avaliações
+      <div class="fr">652 lavagens</div>
+    </div>
+  </div>
+
+  <app-button (click)="open()" [action]="action"></app-button>
+</ion-content>

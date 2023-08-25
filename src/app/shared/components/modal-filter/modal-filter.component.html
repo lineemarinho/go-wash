@@ -1,0 +1,32 @@
+<div class="container">
+  <b>Filtrar</b>
+  <ion-item>
+    <ion-label>Todas</ion-label>
+    <ion-radio slot="start"></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>Esse mês</ion-label>
+    <ion-radio slot="start"></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>Mês passado</ion-label>
+    <ion-radio slot="start"></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>Esse ano</ion-label>
+    <ion-radio slot="start"></ion-radio>
+  </ion-item>
+  <b>Status<br /><br /></b>
+  <div class="status">Ativo</div>
+  <div class="status">Cancelado</div>
+  <div class="status">Finalizado</div>
+
+  <div class="container-button">
+    <div class="clean">
+      <ion-button fill="outline">Limpar</ion-button>
+    </div>
+    <div class="filtro">
+      <ion-button (click)="cancel()" fill="solid">Filtrar</ion-button>
+    </div>
+  </div>
+</div>

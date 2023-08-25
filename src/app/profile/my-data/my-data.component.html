@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-title>Meus Dados</ion-title>
+  <ion-list>
+    <ion-item>
+      <ion-input
+        label="Nome completo"
+        labelPlacement="stacked"
+        type="text"
+        value="{{ userDetails?.name }}"
+        placeholder="Nome completo"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        label="CPF"
+        labelPlacement="stacked"
+        brmasker="CPF"
+        type="text"
+        value="{{ userDetails?.cpf_cnpj }}"
+        placeholder="CPF"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        label="E-mail"
+        labelPlacement="stacked"
+        type="text"
+        value="{{ userDetails?.email }}"
+        placeholder="E-mail"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        label="Data de nascimento"
+        labelPlacement="stacked"
+        type="date"
+        value="{{ userDetails?.birthday }}"
+        placeholder="Data de nascimento"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        label="Celular"
+        labelPlacement="stacked"
+        type="text"
+        value="{{ userDetails?.phone }}"
+        placeholder="Celular"
+      >
+      </ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>

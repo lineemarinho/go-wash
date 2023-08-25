@@ -1,0 +1,28 @@
+<ion-content>
+  <div class="title">
+    Qual veiculo gostaria<br />
+    de agendar a lavagem?
+  </div>
+
+  <div class="subtitle">Escolha o veiculo:</div>
+
+  <app-vehicles [vehicles]="vehicles"></app-vehicles>
+
+  <div class="subtitle">Qual o tipo de lavagem:</div>
+  <div class="list-wash">
+    <ul>
+      <li *ngFor="let item of  listType">
+        <ion-icon></ion-icon>
+        <h1>{{item.name}}</h1>
+        <h2>{{item.detail}}</h2>
+      </li>
+    </ul>
+  </div>
+  <div class="subtitle">Serviços adicionais</div>
+  <div class="list-additional">
+    <ul>
+      <li *ngFor="let item of  listAdditional">{{item.name}}</li>
+    </ul>
+  </div>
+  <app-button (click)="avance()" [action]="action"></app-button>
+</ion-content>

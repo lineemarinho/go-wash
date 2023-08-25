@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-title
+    >Olá,<br />
+    Faça seu login!</ion-title
+  >
+  <ion-list>
+    <ion-item>
+      <ion-input
+        label="Informe seu e-mail"
+        labelPlacement="stacked"
+        type="text"
+        [(ngModel)]="email"
+        placeholder="E-mail"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        label="Senha"
+        labelPlacement="stacked"
+        type="password"
+        [(ngModel)]="password"
+        placeholder="Senha"
+      >
+      </ion-input>
+    </ion-item>
+    <div
+      class="password"
+      (click)="navigation('tabs/access-page/forgot-password')"
+    >
+      Esqueceu sua senha?
+    </div>
+  </ion-list>
+  <div class="action" (click)="login(email, password)">
+    <app-button [action]="action"></app-button>
+  </div>
+</ion-content>

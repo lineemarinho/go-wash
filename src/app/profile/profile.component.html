@@ -1,0 +1,33 @@
+<ion-content>
+  <ul *ngIf="user">
+    <div class="user">Olá, {{ user?.user.name }}! :)</div>
+
+    <br /><br />
+    <li (click)="navigation('/tabs/profile/data')">
+      <span class="material-symbols-outlined"> ballot </span> Dados cadastrais
+    </li>
+    <li (click)="navigation('/tabs/profile/addresses')">
+      <span class="material-symbols-outlined"> location_on </span> Meus
+      endereços
+    </li>
+    <li (click)="navigation('/tabs/profile/vehicles')">
+      <span class="material-symbols-outlined"> no_crash </span>Meus veiculos
+    </li>
+    <li (click)="navigation('/tabs/profile/password')">
+      <span class="material-symbols-outlined"> password </span> Alterar senha
+    </li>
+    <li (click)="navigation('/tabs/profile/terms')">
+      <span class="material-symbols-outlined"> description </span> Termos de uso
+    </li>
+    <!-- <li (click)="navigation('/tabs/profile/questions')">
+      <span class="material-symbols-outlined"> help </span> Ajuda
+    </li> -->
+    <li (click)="loggout()">
+      <span class="material-symbols-outlined"> logout </span>Sair
+    </li>
+  </ul>
+  <div class="message" *ngIf="!user">
+    Faça o login para acessar<br />
+    seus dados.
+  </div>
+</ion-content>

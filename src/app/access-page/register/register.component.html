@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-title
+    >Para aproveitar todos os <br />
+    benefícios crie uma conta</ion-title
+  >
+  <ion-list>
+    <ion-item>
+      <ion-input
+        label="Informe seu e-mail"
+        labelPlacement="stacked"
+        type="text"
+        [(ngModel)]="userData.email"
+        placeholder="Informe seu e-mail"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        label="Informe seu telefone"
+        labelPlacement="stacked"
+        [(ngModel)]="userData.phone"
+        type="text"
+        placeholder="Informe seu telefone"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        label="Qual seu nome completo"
+        labelPlacement="stacked"
+        [(ngModel)]="userData.name"
+        type="text"
+        placeholder="Qual seu nome completo"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        label="Informe seu cpf"
+        labelPlacement="stacked"
+        type="text"
+        [(ngModel)]="userData.cpf_cnpj"
+        placeholder="Informe seu cpf"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        label=" Crie sua senha"
+        labelPlacement="stacked"
+        type="password"
+        [(ngModel)]="userData.password"
+        placeholder=" Crie sua senha"
+      >
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label=" Data de nascimento"
+        labelPlacement="stacked"
+        type="text"
+        [(ngModel)]="userData.birthday"
+        placeholder=" Data de nascimento"
+      >
+      </ion-input>
+    </ion-item>
+    <div class="action">
+      <app-button (click)="signup()" [action]="action"></app-button>
+    </div>
+  </ion-list>
+</ion-content>

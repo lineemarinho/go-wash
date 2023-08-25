@@ -1,0 +1,16 @@
+<ion-toolbar color="primary">
+  <ion-buttons (click)="openMenu()">
+    <ion-icon slot="icon-only" name="menu"></ion-icon>
+  </ion-buttons>
+
+  <ion-title>
+    <img src="assets/images/logo.svg" alt="Logo" class="logo" />
+  </ion-title>
+</ion-toolbar>
+<ion-card>
+  <b *ngIf="user">Olá, {{ user?.user.name }}!</b> <br />
+  <div class="messageHeader">Deseja lavar seu veiculo agora?</div>
+
+  <ion-button *ngIf="user" (click)="avance()">Visualizar propostas</ion-button>
+  <ion-button *ngIf="!user" (click)="login()">Fazer login</ion-button>
+</ion-card>

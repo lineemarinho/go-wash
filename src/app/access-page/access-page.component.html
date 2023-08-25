@@ -1,0 +1,21 @@
+<ion-content>
+  <img src="assets/images/logo.svg" alt="Logo" class="logo" />
+  <h1>
+    Encontre a melhor <br />
+    <b>lavagem de carro</b>
+  </h1>
+  <h2>
+    O ponto certo para todas as suas<br />
+    necessidades de lavagem de carros
+  </h2>
+  <div class="google" (click)="loginGoogle()">
+    <b>Login com Google</b>
+  </div>
+  <div class="email" (click)="navigation('tabs/access-page/login')">
+    <b>Entrar com e-mail</b>
+  </div>
+  <h2>
+    Não tem uma conta?
+    <b (click)="navigation('tabs/access-page/register')">Inscrever-se</b>
+  </h2>
+</ion-content>

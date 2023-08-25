@@ -1,0 +1,22 @@
+<ion-content>
+  <div class="title">
+    Histórico de lavagens
+    <ion-searchbar
+      *ngIf="user"
+      class="custom"
+      placeholder="Psiu! Procure por aqui"
+    ></ion-searchbar>
+  </div>
+  <div class="message" *ngIf="!user">
+    Faça o login para visualizar<br />
+    o histórico de lavagens.
+  </div>
+  <div *ngIf="user">
+    <div class="filter" (click)="filter()">
+      <ion-icon name="filter-outline"></ion-icon> Filtrar
+    </div>
+    <div class="list">
+      <app-scheduling (click)="open()"></app-scheduling>
+    </div>
+  </div>
+</ion-content>

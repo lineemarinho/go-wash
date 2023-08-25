@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="title">
+    Quando gostaria de <br />
+    lavar seu Veículo ?
+  </div>
+
+  <div class="subtitle">Selecione o dia:</div>
+  <div class="list-additional date">
+    <ul>
+      <li>Segunda<br /><b>1</b></li>
+      <li>Segunda<br /><b>1</b></li>
+      <li>Segunda<br /><b>1</b></li>
+    </ul>
+  </div>
+
+  <div class="subtitle">Selecione o horário:</div>
+  <div class="list-additional">
+    <ul>
+      <li>07:00 até 09:00</li>
+      <li>07:00 até 09:00</li>
+      <li class="active">07:00 até 09:00</li>
+      <li>07:00 até 09:00</li>
+    </ul>
+  </div>
+
+  <div class="subtitle">Selecione o endereço:</div>
+
+  <div class="address">
+    <app-addresses></app-addresses>
+  </div>
+  <app-button (click)="avance()" [action]="action"></app-button>
+</ion-content>

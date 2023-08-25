@@ -1,0 +1,225 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import '@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+.subtitle {
+  color: #646775;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  width: 100%;
+  float: left;
+  margin: 20px 0;
+  font-weight: 400;
+  line-height: 144.4%;
+}
+
+main {
+  background-color: white !important;
+}
+
+ion-content {
+  --background: white;
+}
+
+.title {
+  color: #1E1E1E;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 148.4%;
+}
+
+.list-wash {
+  ul {
+    width: 100%;
+    float: left;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+  }
+
+  h1 {
+    color: #1E1E1E;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 148.4%;
+  }
+
+  h2 {
+    color: #646775;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 148.4%;
+  }
+
+  li {
+    list-style-type: none;
+    border-radius: 18px;
+    font-family: Montserrat;
+    border: 2px solid #3C6FF6;
+    background: #FFF;
+    min-width: 150px;
+    float: left;
+    margin: 0 10px 0 0;
+    padding: 20px;
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.10);
+  }
+}
+
+.list-additional {
+  ul {
+    width: 100%;
+    float: left;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+    font-family: Montserrat;
+    border-radius: 8px;
+    width: 49%;
+    color: rgb(145, 145, 145);
+    float: left;
+    text-align: center;
+    font-size: 13px;
+    border: 2px solid white;
+    margin: 0 0 10px 0;
+    padding: 20px;
+    background: #f2f2f2;
+  }
+
+  .active {
+    background: #3C6FF6;
+    color: white;
+  }
+}
+
+ion-searchbar.custom {
+  --background-color: red !important;
+  --color: #333;
+  --placeholder-color: #333;
+  --icon-color: #333;
+  --clear-button-color: #333;
+  --border-radius: 4px;
+  --padding-start: 0;
+  --padding-top: 0;
+  --font-weight: bold !important;
+  --padding-end: 0;
+  margin-top: 20px;
+  --padding-bottom: 0;
+  font-weight: normal !important;
+  padding: 0;
+
+  ion-icon {
+    display: none;
+  }
+
+  .searchbar-search-icon.sc-ion-searchbar-md,
+  .searchbar-cancel-button.sc-ion-searchbar-md {
+    display: none;
+  }
+
+  input {
+    background: #EFEFEF !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    font-weight: bold !important;
+    margin: 0 !important;
+    font-weight: normal !important;
+    padding: 7px 3% !important;
+  }
+}
+
+ion-card {
+  font-family: Montserrat;
+}
+
+.input-wrapper.sc-ion-input-md {
+  --padding-start: 0;
+  --padding-top: 0;
+  --padding-end: 0;
+  --padding-bottom: 0;
+  font-weight: normal;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+ion-tabs {
+  background-color: transparent;
+}
+
+
+ion-router-outlet {
+  height: 100vh;
+}
+
+input {
+  border: 1px solid #f2f2f2 !important;
+  background: white !important;
+  padding: 13px 2% !important;
+  font-size: 13px !important;
+  margin-top: 10px !important;
+  width: 96% !important;
+  font-weight: bold !important;
+  border-radius: 7px !important;
+}
+
+.filter {
+  width: auto;
+  float: left;
+  padding: 10px 20px;
+  background-color: white;
+  font-size: 12px;
+  font-weight: bold;
+  color: #4C505A;
+  margin: -10px 0 20px 10px;
+  border-radius: 90px;
+  background: #FFF;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
+
+  >ion-icon {
+    color: #3C6FF6;
+  }
+}
+
+.message {
+  text-align: center;
+}
