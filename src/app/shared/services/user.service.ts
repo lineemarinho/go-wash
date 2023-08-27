@@ -143,7 +143,7 @@ export class AuthService {
       `Bearer ${this.authToken}`
     );
     const url = `${this.apiMyAddress}/${requestData.id}`;
-    return this.http.post(url, { headers });
+    return this.http.post(url, requestData, { headers });
   }
 
   upVehicle(data: any): Observable<any> {

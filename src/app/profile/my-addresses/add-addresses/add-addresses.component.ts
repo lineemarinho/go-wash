@@ -13,6 +13,7 @@ export class AddAddressesComponent implements OnInit {
   item: any;
   edit: any;
   detailsAddresses = {
+    id: "",
     cep: "",
     address: "",
     number: "",
@@ -29,19 +30,20 @@ export class AddAddressesComponent implements OnInit {
     const navigation = history.state;
     if (navigation.item) {
       this.detailsAddresses = navigation.item;
+      this.detailsAddresses = {
+        id: this.detailsAddresses.id,
+        cep: this.detailsAddresses.cep,
+        address: this.detailsAddresses.address,
+        number: this.detailsAddresses.number,
+        complement: this.detailsAddresses.complement,
+      };
 
-      console.log(this.item, "item");
+      console.log(this.detailsAddresses, "item");
     }
     if (navigation.edit !== undefined) {
       this.edit = navigation.edit;
       console.log(this.edit, "edit");
     }
-
-    // const encodedItem = this.route.snapshot.paramMap.get("item");
-
-    // if (encodedItem !== null) {
-    //   this.detailsAddresses = JSON.parse(encodedItem);
-    // }
   }
   searchCep(cep: any) {
     if (cep.length === 8) {
@@ -50,6 +52,7 @@ export class AddAddressesComponent implements OnInit {
           console.log(response.data);
 
           this.detailsAddresses = {
+            id: "",
             cep: response.data.cep,
             address: response.data.logradouro,
             number: "",
