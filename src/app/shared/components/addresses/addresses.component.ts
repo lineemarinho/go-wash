@@ -31,15 +31,6 @@ export class AddressesComponent implements OnInit {
         edit: true,
       },
     });
-    // this.navCtrl.navigateForward([
-    //   "/tabs/profile/add-addresses",
-    //   {
-    //     state: {
-    //       item: JSON.stringify(item),
-    //       edit: true,
-    //     },
-    //   },
-    // ]);
   }
   deleteAdd(item: any) {
     this.authService.delete(item.id).subscribe(

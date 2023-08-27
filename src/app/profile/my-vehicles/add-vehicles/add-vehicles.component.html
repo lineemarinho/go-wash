@@ -73,7 +73,15 @@
         <img src="assets/icon/hatch.png" alt="Logo" class="logo" />Hatch
       </div>
     </div>
-    <app-button (click)="edit()" action="Editar"></app-button>
-    <app-button (click)="submitForm()" [action]="action"></app-button>
+    <app-button
+      *ngIf="editPage"
+      (click)="edit(vehicles)"
+      action="Editar"
+    ></app-button>
+    <app-button
+      *ngIf="!editPage"
+      (click)="submitForm()"
+      [action]="action"
+    ></app-button>
   </ion-list>
 </ion-content>

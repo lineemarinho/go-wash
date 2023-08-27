@@ -10,8 +10,11 @@
         >Ano: {{ item.year }} Tamanho: {{ item.type }}
       </ion-card-subtitle>
     </ion-card-header>
-    <div class="action" (click)="editAdd(item)" *ngIf="edit">
+    <div class="action" (click)="editAdd(item)">
       <ion-icon name="create-outline"></ion-icon>
+    </div>
+    <div class="action" (click)="deleteAdd(item)">
+      <ion-icon name="trash-outline"></ion-icon>
     </div>
   </ion-card>
 </div>

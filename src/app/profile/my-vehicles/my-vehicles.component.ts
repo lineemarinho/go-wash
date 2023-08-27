@@ -1,16 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Storage } from '@ionic/storage-angular';
-import { NavController } from '@ionic/angular';
-import { AuthService } from 'src/app/shared/services/user.service';
+import { Component, Input, OnInit } from "@angular/core";
+import { Storage } from "@ionic/storage-angular";
+import { NavController } from "@ionic/angular";
+import { AuthService } from "src/app/shared/services/user.service";
 
 @Component({
-  selector: 'app-my-vehicles',
-  templateUrl: './my-vehicles.component.html',
-  styleUrls: ['./my-vehicles.component.scss'],
+  selector: "app-my-vehicles",
+  templateUrl: "./my-vehicles.component.html",
+  styleUrls: ["./my-vehicles.component.scss"],
 })
 export class MyVehiclesComponent implements OnInit {
-  edit = true;
-  action = 'Adicionar novo veiculo';
+  edit: any;
+  action = "Adicionar novo veiculo";
   address: any;
   user: any;
   vehicles: any;
@@ -24,7 +24,7 @@ export class MyVehiclesComponent implements OnInit {
   ngOnInit() {
     this.storage.create();
 
-    this.storage.get('user').then((userData) => {
+    this.storage.get("user").then((userData) => {
       this.user = userData;
     });
     setTimeout(() => {
@@ -34,12 +34,12 @@ export class MyVehiclesComponent implements OnInit {
           this.vehicles = this.listVehicles.data;
         },
         (error) => {
-          console.error('Erro ao buscar detalhes do usuário:', error);
+          console.error("Erro ao buscar detalhes do usuário:", error);
         }
       );
     }, 200);
   }
   addVehicles() {
-    this.navCtrl.navigateForward('tabs/profile/add-vehicles');
+    this.navCtrl.navigateForward("tabs/profile/add-vehicles");
   }
 }

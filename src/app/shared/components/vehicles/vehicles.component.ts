@@ -1,15 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { AuthService } from '../../services/user.service';
-import { Storage } from '@ionic/storage-angular';
-import { NavController } from '@ionic/angular';
+import { Component, Input, OnInit } from "@angular/core";
+import { AuthService } from "../../services/user.service";
+import { Storage } from "@ionic/storage-angular";
+import { NavController } from "@ionic/angular";
 
 @Component({
-  selector: 'app-vehicles',
-  templateUrl: './vehicles.component.html',
-  styleUrls: ['./vehicles.component.scss'],
+  selector: "app-vehicles",
+  templateUrl: "./vehicles.component.html",
+  styleUrls: ["./vehicles.component.scss"],
 })
 export class VehiclesComponent implements OnInit {
-  @Input() edit = false;
+  @Input() edit = true;
   user: any;
   @Input() public vehicles: any;
   listVehicles: any;
@@ -21,9 +21,12 @@ export class VehiclesComponent implements OnInit {
 
   ngOnInit() {}
   editAdd(item: any) {
-    this.navCtrl.navigateForward([
-      '/tabs/profile/add-vehicles',
-      { item: JSON.stringify(item) },
-    ]);
+    this.navCtrl.navigateForward("/tabs/profile/add-vehicles", {
+      state: {
+        item: item,
+        edit: true,
+      },
+    });
   }
+  deleteAdd(item: any) {}
 }

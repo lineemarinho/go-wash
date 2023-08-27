@@ -1,23 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { NavController, ToastController } from '@ionic/angular';
-import { AuthService } from 'src/app/shared/services/user.service';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+import { NavController, ToastController } from "@ionic/angular";
+import { AuthService } from "src/app/shared/services/user.service";
 
 @Component({
-  selector: 'app-add-vehicles',
-  templateUrl: './add-vehicles.component.html',
-  styleUrls: ['./add-vehicles.component.scss'],
+  selector: "app-add-vehicles",
+  templateUrl: "./add-vehicles.component.html",
+  styleUrls: ["./add-vehicles.component.scss"],
 })
 export class AddVehiclesComponent implements OnInit {
-  action = 'Cadastrar';
+  action = "Cadastrar";
   typeCar: any;
+  editPage: any;
   vehicles = {
-    id: '',
-    type: '',
-    brand: '',
-    model: '',
-    year: '',
-    color: '',
+    id: "",
+    type: "",
+    brand: "",
+    model: "",
+    year: "",
+    color: "",
   };
   constructor(
     private navCtrl: NavController,
@@ -27,10 +28,9 @@ export class AddVehiclesComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const encodedItem = this.route.snapshot.paramMap.get('item');
-
-    if (encodedItem !== null) {
-      this.vehicles = JSON.parse(encodedItem);
+    const navigation = history.state;
+    if (navigation.item) {
+      this.vehicles = navigation.item;
 
       this.vehicles = {
         id: this.vehicles.id,
@@ -41,9 +41,12 @@ export class AddVehiclesComponent implements OnInit {
         color: this.vehicles.color,
       };
     }
+    if (navigation.edit !== undefined) {
+      this.editPage = navigation.edit;
+    }
   }
   addAddresses() {
-    this.navCtrl.navigateForward('tabs/profile/add-vehicles');
+    this.navCtrl.navigateForward("tabs/profile/add-vehicles");
   }
 
   selectVehicleType(type: any) {
@@ -54,42 +57,42 @@ export class AddVehiclesComponent implements OnInit {
     this.authService.upVehicle(this.vehicles).subscribe(
       async (response) => {
         const toast = await this.toastController.create({
-          message: 'Veiculo cadastrado com sucesso! :)',
+          message: "Veiculo cadastrado com sucesso! :)",
           duration: 2000,
-          position: 'top',
+          position: "top",
         });
 
         toast.present();
-        this.navCtrl.navigateForward('tabs/profile/vehicles');
+        this.navCtrl.navigateForward("tabs/profile/vehicles");
       },
       async (error) => {
         const toast = await this.toastController.create({
-          message: 'Erro ao cadastrar o veiculo, tente novamente! :)',
+          message: "Erro ao cadastrar o veiculo, tente novamente! :)",
           duration: 2000,
-          position: 'top',
+          position: "top",
         });
 
         toast.present();
       }
     );
   }
-  edit() {
-    this.authService.upVehicle(this.vehicles).subscribe(
+  edit(vehicles: any) {
+    this.authService.upVehicle(vehicles).subscribe(
       async (response) => {
         const toast = await this.toastController.create({
-          message: 'Veiculo cadastrado com sucesso! :)',
+          message: "Veiculo editado com sucesso! :)",
           duration: 2000,
-          position: 'top',
+          position: "top",
         });
 
         toast.present();
-        this.navCtrl.navigateForward('tabs/profile/vehicles');
+        this.navCtrl.navigateForward("tabs/profile/vehicles");
       },
       async (error) => {
         const toast = await this.toastController.create({
-          message: 'Erro ao cadastrar o veiculo, tente novamente! :)',
+          message: "Erro ao cadastrar o veiculo, tente novamente! :)",
           duration: 2000,
-          position: 'top',
+          position: "top",
         });
 
         toast.present();

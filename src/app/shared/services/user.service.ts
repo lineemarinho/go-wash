@@ -152,7 +152,6 @@ export class AuthService {
       `Bearer ${this.authToken}`
     );
     const url = `${this.upMyVehicle}/${data.id}`;
-
     return this.http.post(url, data, { headers });
   }
 
