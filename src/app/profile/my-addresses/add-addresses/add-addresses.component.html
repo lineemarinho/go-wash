@@ -51,6 +51,15 @@
       >
       </ion-input>
     </ion-item>
-    <app-button (click)="submitForm()" [action]="action"></app-button>
+    <app-button
+      *ngIf="edit"
+      (click)="upAddEdit(detailsAddresses)"
+      action="Editar"
+    ></app-button>
+    <app-button
+      *ngIf="!edit"
+      (click)="submitForm()"
+      action="Cadastrar"
+    ></app-button>
   </ion-list>
 </ion-content>

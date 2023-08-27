@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const environment = {\n  production: true,\n  apiUrl: \"https://api-go-wash-efc9c9582687.herokuapp.com\"\n};","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://api-go-wash-efc9c9582687.herokuapp.com',
+  apiUrl: "https://api-go-wash-efc9c9582687.herokuapp.com",
 };
 
 /*

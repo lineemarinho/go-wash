@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
-import { environment } from 'src/environments/environment';
-import { Storage } from '@ionic/storage';
-import { User, UserInterface } from 'src/app/access-page/profile.interfaces';
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable, tap } from "rxjs";
+import { environment } from "src/environments/environment";
+import { Storage } from "@ionic/storage";
+import { User, UserInterface } from "src/app/access-page/profile.interfaces";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class AuthService {
   token: any;
@@ -14,6 +14,7 @@ export class AuthService {
   private apiMyAddress = `${environment.apiUrl}/api/auth/address`;
   private apiLogin = `${environment.apiUrl}/api/login`;
   private myData = `${environment.apiUrl}/api/auth`;
+  private upUser = `${environment.apiUrl}/api/auth/user`;
   private myAddress = `${environment.apiUrl}/api/auth/`;
   private myVehicles = `${environment.apiUrl}/api/auth/`;
   private apiMyVehicle = `${environment.apiUrl}/api/auth/vehicle`;
@@ -24,14 +25,14 @@ export class AuthService {
   private apiCep = `${environment.apiUrl}/api/auth/via-cep`;
   private baseUrl = `${environment.apiUrl}/api/auth/address`;
   private apiLogout = `${environment.apiUrl}/api/auth/logout`;
-  userStorageKey = 'user';
+  userStorageKey = "user";
   user: any;
   authToken: any;
 
   constructor(private http: HttpClient, private storage: Storage) {
     this.storage.create();
 
-    this.storage.get('user').then((userData) => {
+    this.storage.get("user").then((userData) => {
       this.user = userData;
       this.authToken = this.user.access_token;
     });
@@ -46,13 +47,13 @@ export class AuthService {
     return this.http.post<User>(this.apiLogin, requestBody).pipe(
       tap((user) => {
         console.log(user);
-        this.storage.set('user', user);
+        this.storage.set("user", user);
       })
     );
   }
   logout() {
     const headers = new HttpHeaders().set(
-      'Authorization',
+      "Authorization",
       `Bearer ${this.authToken}`
     );
 
@@ -63,7 +64,7 @@ export class AuthService {
   }
   searchCep(cep: number) {
     const headers = new HttpHeaders().set(
-      'Authorization',
+      "Authorization",
       `Bearer ${this.authToken}`
     );
 
@@ -78,7 +79,7 @@ export class AuthService {
   }
   delete(userData: any): Observable<any> {
     const headers = new HttpHeaders().set(
-      'Authorization',
+      "Authorization",
       `Bearer ${this.authToken}`
     );
     return this.http.delete(`${this.baseUrl}/${userData}`, { headers });
@@ -96,7 +97,7 @@ export class AuthService {
   }
   upPassword(requestData: any): Observable<any> {
     const headers = new HttpHeaders().set(
-      'Authorization',
+      "Authorization",
       `Bearer ${this.authToken}`
     );
 
@@ -105,7 +106,7 @@ export class AuthService {
 
   profile(userId: number): Observable<any> {
     const headers = new HttpHeaders().set(
-      'Authorization',
+      "Authorization",
       `Bearer ${this.authToken}`
     );
     const url = `${this.myData}/user/${userId}`;
@@ -114,22 +115,40 @@ export class AuthService {
 
   createAddress(data: any): Observable<any> {
     const headers = new HttpHeaders().set(
-      'Authorization',
+      "Authorization",
       `Bearer ${this.authToken}`
     );
     return this.http.post(this.apiMyAddress, data, { headers });
   }
   addVehicle(data: any): Observable<any> {
     const headers = new HttpHeaders().set(
-      'Authorization',
+      "Authorization",
       `Bearer ${this.authToken}`
     );
     return this.http.post(this.apiMyVehicle, data, { headers });
   }
 
+  upUserDate(requestData: any): Observable<any> {
+    const headers = new HttpHeaders().set(
+      "Authorization",
+      `Bearer ${this.authToken}`
+    );
+
+    const url = `${this.upUser}/${requestData.id}`;
+    return this.http.post(url, { headers });
+  }
+  upAddEdit(requestData: any): Observable<any> {
+    const headers = new HttpHeaders().set(
+      "Authorization",
+      `Bearer ${this.authToken}`
+    );
+    const url = `${this.apiMyAddress}/${requestData.id}`;
+    return this.http.post(url, { headers });
+  }
+
   upVehicle(data: any): Observable<any> {
     const headers = new HttpHeaders().set(
-      'Authorization',
+      "Authorization",
       `Bearer ${this.authToken}`
     );
     const url = `${this.upMyVehicle}/${data.id}`;
@@ -139,7 +158,7 @@ export class AuthService {
 
   allAddress() {
     const headers = new HttpHeaders().set(
-      'Authorization',
+      "Authorization",
       `Bearer ${this.authToken}`
     );
     const url = `${this.myAddress}address`;
@@ -148,7 +167,7 @@ export class AuthService {
 
   allVehicles() {
     const headers = new HttpHeaders().set(
-      'Authorization',
+      "Authorization",
       `Bearer ${this.authToken}`
     );
     const url = `${this.myVehicles}vehicle`;
@@ -156,6 +175,6 @@ export class AuthService {
   }
 
   saveUserDetailsToStorage(userDetails: any) {
-    localStorage.setItem('userDetails', JSON.stringify(userDetails));
+    localStorage.setItem("userDetails", JSON.stringify(userDetails));
   }
 }
